@@ -14,7 +14,9 @@ class BuatTabelArea extends Migration
     public function up()
     {
         Schema::create('area', function (Blueprint $table) {
-            $table->id();
+            $table->smallIncrements('id');
+            $table->string('kode', 10)->unique();
+            $table->string('deskripsi', 50)->unique();
             $table->timestamps();
         });
     }

@@ -14,7 +14,10 @@ class BuatTabelDokumentasi extends Migration
     public function up()
     {
         Schema::create('dokumentasi', function (Blueprint $table) {
-            $table->id();
+            $table->smallIncrements('id');
+            $table->smallInteger('id_doc_type')->unsigned();
+            $table->string('name', 40);
+            $table->string('url', 80);
             $table->timestamps();
         });
     }

@@ -14,7 +14,9 @@ class BuatTabelOutlet extends Migration
     public function up()
     {
         Schema::create('outlet', function (Blueprint $table) {
-            $table->id();
+            $table->smallIncrements('id');
+            $table->string('kode', 10)->unique();
+            $table->string('deskripsi', 50)->unique();
             $table->timestamps();
         });
     }
